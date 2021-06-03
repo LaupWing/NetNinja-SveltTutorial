@@ -1,6 +1,6 @@
 <script>
    export let message
-	let show = true;
+	export let show = false;
    export let isPromo = false
 </script>
 
@@ -8,6 +8,7 @@
 	<div 
       class="backdrop" 
       class:promo={isPromo}
+      on:click
    >
 		<div class="modal">
 			<p>{message}</p>
