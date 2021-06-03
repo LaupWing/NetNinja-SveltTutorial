@@ -1,15 +1,13 @@
 <script>
-	let name = 'Laup';
-   const updateName = ()=>{
-      name = 'hi'
-   }
+	let firstName = 'Laup';
+	let lastName = 'Laup';
+   $: fullName = `${firstName} ${lastName}`
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-   <button on:click={updateName}>Change Name</button>
-   <input type="text" bind:value={name}>
+   <p>{fullName}</p>
+   <input type="text" bind:value={firstName}>
+   <input type="text" bind:value={lastName}>
 </main>
 
 <style>
