@@ -10,7 +10,7 @@
    }
 </script>
 
-<Modal/>
+<Modal message="Helloo"/>
 <main>
 	{#each people as person (person.id)}
 		<div>

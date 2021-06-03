@@ -1,6 +1,7 @@
 <script>
+   export let message
 	let show = true;
-   let isPromo = true
+   export let isPromo = false
 </script>
 
 {#if show}
@@ -9,7 +10,7 @@
       class:promo={isPromo}
    >
 		<div class="modal">
-			<p>Sign up for offers!</p>
+			<p>{message}</p>
 		</div>
 	</div>
 {/if}
