@@ -10,6 +10,10 @@
 	const toggleModal = () => {
 		showModal = !showModal;
 	};
+   const addPerson = (e) =>{
+      people = [...people, e.detail]
+      showModal = false
+   }
 </script>
 
 <Modal 
@@ -17,7 +21,9 @@
    show={showModal} 
    on:click={toggleModal}
 >
-   <AddPersonForm/>
+   <AddPersonForm
+      on:addPerson={addPerson}
+   />
 </Modal>
 <main>
 	<button on:click|once={toggleModal}>Open Modal</button>
