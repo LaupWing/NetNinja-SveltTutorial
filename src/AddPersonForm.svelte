@@ -2,6 +2,7 @@
    let name
    let beltColour
    let age
+   let skills = []
    const handleSubmit = ()=>{
       console.log(name, beltColour, age)
    }
@@ -11,6 +12,17 @@
 	<input type="text" placeholder="name" bind:value={name}/>
 	<input type="text" placeholder="belt colour"  bind:value={beltColour}/>
    <input type="number" bind:value={age} placeholder="age">
+   <label>Skills:</label>
+   <input type="checkbox" value="fighting" bind:group={skills}> fighting <br>
+   <input type="checkbox" value="sneaking" bind:group={skills}> sneaking <br>
+   <input type="checkbox" value="running" bind:group={skills}> running <br>
+   <label>Belt colour:</label>
+   <select bind:value={beltColour}>
+      <option value="black">black</option>
+      <option value="orange">orange</option>
+      <option value="brown">brown</option>
+      <option value="white">white</option>
+   </select>
 	<button>Add Person</button>
 </form>
 
