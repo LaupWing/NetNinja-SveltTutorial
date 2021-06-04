@@ -1,5 +1,4 @@
 <script>
-   export let message
 	export let show = false;
    export let isPromo = false
 </script>
@@ -11,7 +10,8 @@
       on:click|self
    >
 		<div class="modal">
-			<p>{message}</p>
+         <slot name="title"></slot>
+         <slot></slot>
 		</div>
 	</div>
 {/if}

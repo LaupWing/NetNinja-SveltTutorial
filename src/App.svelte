@@ -1,30 +1,33 @@
 <script>
-   import Modal from './Modal.svelte'
-   let showModal = false
+	import Modal from './Modal.svelte';
+	let showModal = false;
 	let people = [
 		{ name: 'yoshi', beltColour: 'black', age: 25, id: 1 },
 		{ name: 'mario', beltColour: 'orange', age: 45, id: 2 },
 		{ name: 'luigi', beltColour: 'brown', age: 35, id: 3 },
 	];
-   const toggleModal = ()=>{
-      showModal = !showModal
-   }
+	const toggleModal = () => {
+		showModal = !showModal;
+	};
 </script>
 
-<Modal 
-   message="Helloo" 
-   isPromo={true} 
-   show={showModal}
-   on:click={toggleModal}
-/>
+<Modal isPromo={true} show={showModal} on:click={toggleModal}>
+	<form action="" />
+	<input type="text" placeholder="name" />
+	<input type="text" placeholder="belt colour" />
+	<button>Add Person</button>
+	<div slot="title">
+		<h3>Add a new person</h3>
+	</div>
+</Modal>
 <main>
-   <button on:click|once={toggleModal}>Open Modal</button>
+	<button on:click|once={toggleModal}>Open Modal</button>
 	{#each people as person (person.id)}
 		<div>
 			<h4>{person.name}</h4>
-         {#if person.beltColour === 'black'}
-            <p><strong>Master</strong></p>
-         {/if}
+			{#if person.beltColour === 'black'}
+				<p><strong>Master</strong></p>
+			{/if}
 			<p>{person.age} years old, {person.beltColour} belt.</p>
 		</div>
 	{:else}
